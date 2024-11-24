@@ -3,31 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=main, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Previsão do tempo</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
-
 <body>
     <main class="container">
         <div class="busca">
-            <input id="input-busca" type="text" placeholder="Digite a cidade">
-            <button class="bnt-busca">
-                <img src="./src/imagem/lupa.png" alt="Lupa">
+            <input type="text" id="input-busca" placeholder="Digite a cidade">
 
+            <button class="btn-busca">
+                <img class="lupa" src="./src/imagem/lupa.png" alt="Lupa da busca" />
             </button>
         </div>
         <div class="informacao-principal">
-            <h1 id="cidade">Use a lupa  acima para ver o clima em uma cidade</h1>
+            <h1 id="cidade">Use a lupa acima para ver o clima em uma cidade</h1>
+
             <p class="temperatura" id="temperatura">12</p>
 
-            <img id="icone-condicao" src="./src/imagem/116.webp" alt="Icone condição do tempo">
+            <img id="icone-condicao" src="./src/imagem/116.webp" alt="icone condição do clima" />
+            <p class="condicao" id="condicao"></p>
         </div>
         <div class="informacao-secundaria">
-            <div class="umidade">
-                <span>Umidade</span>
-                <span id="umidade">--</span>
+            <div class="humidade">
+                <span>Humidade</span>
+                <span id="humidade">--</span>
             </div>
             <div class="velocidade-do-vento">
                 <span>Velocidade do vento</span>
@@ -35,6 +41,8 @@
             </div>
         </div>
     </main>
+
+    <script src="./src/js/index.js"></script>
 </body>
 
 </html>
