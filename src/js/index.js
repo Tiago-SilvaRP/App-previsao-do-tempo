@@ -29,13 +29,19 @@ inputDeBusca.addEventListener('keyup', async (e) => {
 
 async function buscarDadosDaCidade(cidade) {
     const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${chaveDaApi}&q=${cidade}&aqi=no&lang=pt`;
-    
+
+    try{
     const resposta = await fetch(apiUrl);
 
     if (resposta.status !== 200) return alert("Cidade não encontrada!");
     const dados = resposta.json();
 
     return dados;
+    } catch (error) {
+        console.error("Erro ao buscar dados da cidade:", error);
+        alert("Errp na conexão com a API. Tente novamente mais tarde.");
+        return null;
+    }
 }
 
 function preencherDadosNaTela(dados, cidade) {
