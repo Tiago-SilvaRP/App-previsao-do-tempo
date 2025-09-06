@@ -23,7 +23,7 @@ inputDeBusca.addEventListener('keyup', async (e) => {
         if (!cidade) return alert(`${campoVazio}`);
         const dados = await buscarDadosDaCidade(cidade);
 
-        if (dados) preencherDadosNaTela(dados, cidade)
+        if (dados) preencherDadosNaTela(dados, cidade);
     }
 })
 
@@ -39,7 +39,7 @@ async function buscarDadosDaCidade(cidade) {
         return dados;
     } catch (error) {
         console.error("Erro ao buscar dados da cidade:", error);
-        alert("Errp na conexão com a API. Tente novamente mais tarde.");
+        alert("Erro na conexão com a API. Tente novamente mais tarde.");
         return null;
     }
 }
